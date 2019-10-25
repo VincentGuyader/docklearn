@@ -9,10 +9,18 @@ Authors@R:
            comment = c(ORCID = "0000-0003-0671-9270"))
 Description: Deploy Rmd using shiny_prerendered.
 License: MIT
+Imports: 
+    magrittr,
+    purrr,
+    rmarkdown,
+    stringr,
+    learnr,
+    ggplot2,
+    magrittr,
+    dplyr,
+    parsons,
+    knitr,
+    readr
 Encoding: UTF-8
 LazyData: true
-Imports: 
-    learnr,
-    tidyverse,
-    dplyr
 RoxygenNote: 6.1.1
