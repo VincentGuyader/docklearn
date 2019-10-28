@@ -1,6 +1,6 @@
 Package: docklearn
 Title: Deploy shiny_prerendered Rmds
-Version: 0.1
+Version: 0.1.9000
 Authors@R: 
     person(given = "vincent",
            family = "guyader",

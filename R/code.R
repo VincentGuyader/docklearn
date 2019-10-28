@@ -22,13 +22,14 @@ is_shiny_prerendered <- function(header,balise="runtime:shiny_prerendered"){
   res >= 1
 }
 
-tous_les_programmes <- function(){
+#' @export
+tous_les_programmes <- function(pattern = "*.Rmd$"){
 tous_les_rmd<-list.files(system.file("learnr", package = "docklearn"),
            all.files = TRUE,full.names = TRUE,
            include.dirs = FALSE,no.. = FALSE,
            recursive = TRUE
            ,
-           pattern = "*.Rmd$"
+           pattern = pattern
            )
 a_garder <- tous_les_rmd %>%
   map(get_header) %>%
