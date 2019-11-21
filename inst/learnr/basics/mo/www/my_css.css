@@ -1,0 +1,11 @@
+.band {
+    background-color: white;
+    background-image: url("fond4.png");
+    background-size:cover;
+}
+
+.bandContent {
+    background-color: white;
+    opacity: 0.85;
+}
+

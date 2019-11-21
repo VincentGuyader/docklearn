@@ -1,6 +1,8 @@
 ---
 title: "Module 0"
-output: learnr::tutorial
+output: 
+  learnr::tutorial:
+     css: www/my_css.css
 runtime: shiny_prerendered
 ---
 
