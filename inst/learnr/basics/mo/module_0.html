@@ -10,7 +10,7 @@
 
 
 
-<meta name="progressive" content="false" />
+<meta name="progressive" content="true" />
 <meta name="allow-skip" content="false" />
 
 <title>Module 0</title>
@@ -117,66 +117,27 @@ $(document).ready(function () {
 
 <div class="topics">
 
-<div id="section-truc-1" class="section level1">
-<h1>truc 1</h1>
+<div id="section-premières-conversations-runiques" class="section level1">
+<h1>Premières conversations runiques</h1>
+<div id="section-objectifs" class="section level2">
+<h2>Objectifs</h2>
+<p>Dans ce premier module, nous allons progressivement :</p>
+<ul>
+<li><p>comprendre ce qu’est-ce le fameux langage runique R</p></li>
+<li><p>entamer les premiers dialogues avec R via une fenêtre de saisie : la console</p></li>
+<li><p>et nous familiariser avec quelques uns des tics de langages de R</p></li>
+</ul>
+<p>En cas de besoin, n’hésitez pas à solliciter un animateur circulant dans la salle.</p>
+</div>
 <div id="section-quest-ce-que-r" class="section level2">
 <h2>Qu’est-ce que R ?</h2>
-<p>R est un langage utilisé pour le traitement de données statistiques, dont la première version a été publiée en février 2000. D’abord principalement diffusé parmi les chercheurs, R est aujourd’hui de plus en plus utilisé au sein des Instituts nationaux de statistiques.</p>
-<p>À la différence d’autres logiciels comme SAS, R est un <strong>logiciel libre</strong> : sa licence d’utilisation est gratuite et autorise chaque utilisateur à <strong>accéder, modifier ou redistribuer son code source</strong>.</p>
+<p>R est un langage utilisé pour le traitement de données statistiques, dont la première version a été publiée en février 2000 par Robert Gentleman et Ross Ihaka. D’abord principalement diffusé parmi les chercheurs, R est aujourd’hui de plus en plus utilisé au sein des Instituts nationaux de statistiques.</p>
+<p>R permet de faire des <strong>calculs statistiques</strong>, de les restituer sous forme de <strong>tableaux</strong> et également de tracer des <strong>graphiques</strong> et des cartes géographiques. Les résultats produits dans R peuvent être exportés dans des <strong>rapports</strong> et même être intégrés dans des <strong>applications web</strong> en ligne.</p>
+<p>À la différence d’autres logiciels comme SAS, R est un <strong>logiciel libre</strong> : sa licence d’utilisation est gratuite et autorise chaque utilisateur à <strong>accéder, modifier ou redistribuer son code source</strong>. Le code source est l’équivalent du mode d’emploi pour la fabrication du logiciel. Il est aussi <strong>multi-plateforme</strong>. Cela signifie qu’il peut être executé sur plusieurs systèmes d’exploitation (Windows, MacOS, Linux…)</p>
 <!-- Une des conséquences de cette philosophie "libre" est le rôle qu'y jouent les modules complémentaires, ou **packages**. Ces packages enrichissent considérablement les fonctionnalités du logiciel : comme d'avoir une calculatrice à laquelle on peut ajouter de nouveaux boutons pour la personnaliser pour ses besoins... -->
-<p>Sous ces lignes se trouve une <strong>console</strong> R et, à la manière d’une calculatrice, il est possible de lui demander de réaliser des calculs pour nous : tapez ci-dessous, dans la console, un calcul tel que <code>2 + 2</code> et appuyez sur le bouton bleu <img src="www/bouton_run_code.png" /></p>
-<div class="tutorial-exercise" data-label="two-plus-two2" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>zelda</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    list(message = check_code, correct = TRUE, location = \"append\")","}"]}</script>
 </div>
-<p>R vous répond <code>4</code> et heureusement ! A l’avenir nous allons lui faire faire des choses beaucoup plus compliquées…</p>
-<p>Notez que quand R répond à vos demandes, il commence toutes ses “phrases” par un numero de ligne, ici <code>[1]</code></p>
-<p>Voici une console un peu plus grande qui contient des instructions pré-remplies, exécutez-les pour voir comment R structure sa réponse à votre sollicitation :</p>
-<div class="tutorial-exercise" data-label="several_instructions" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>2 + 2
-12345678 * 4
-&quot;du texte entre guillemets&quot;</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    list(message = check_code, correct = TRUE, location = \"append\")","}"]}</script>
-</div>
-<p>La console est un lieu de dialogue, vous commandez et R s’exécute. Parfois, la communication passe mal, R ne vous comprend pas</p>
-<div class="tutorial-exercise" data-label="error_is_ok" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    list(message = check_code, correct = TRUE, location = \"append\")","}"]}</script>
-</div>
-<div id="section-exercise-with-code" class="section level3">
-<h3>Exercise with Code</h3>
-<p><em>Here’s an exercise with some prepopulated code as well as <code>exercise.lines = 5</code> to provide a bit more initial room to work.</em></p>
-<p>Now write a function that adds any two numbers and then call it:</p>
-<div class="tutorial-exercise" data-label="add-function" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="5">
-<pre class="text"><code>add &lt;- function() {
-  
-}</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    list(message = check_code, correct = TRUE, location = \"append\")","}"]}</script>
-</div>
-</div>
-</div>
-<div id="section-topic-2" class="section level2">
-<h2>Topic 2</h2>
-<div id="section-exercise-with-hint" class="section level3">
-<h3>Exercise with Hint</h3>
-<p><em>Here’s an exercise where the chunk is pre-evaulated via the <code>exercise.eval</code> option (so the user can see the default output we’d like them to customize). We also add a “hint” to the correct solution via the chunk immediate below labeled <code>print-limit-hint</code>.</em></p>
-<p>Modify the following code to limit the number of rows printed to 5:</p>
-<div class="tutorial-exercise" data-label="print-limit" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>mtcars</code></pre>
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["mpg"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["cyl"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["disp"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["hp"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["drat"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["wt"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["qsec"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["vs"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["am"],"name":[9],"type":["dbl"],"align":["right"]},{"label":["gear"],"name":[10],"type":["dbl"],"align":["right"]},{"label":["carb"],"name":[11],"type":["dbl"],"align":["right"]}],"data":[{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.620","7":"16.46","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4"},{"1":"21.0","2":"6","3":"160.0","4":"110","5":"3.90","6":"2.875","7":"17.02","8":"0","9":"1","10":"4","11":"4","_rn_":"Mazda RX4 Wag"},{"1":"22.8","2":"4","3":"108.0","4":"93","5":"3.85","6":"2.320","7":"18.61","8":"1","9":"1","10":"4","11":"1","_rn_":"Datsun 710"},{"1":"21.4","2":"6","3":"258.0","4":"110","5":"3.08","6":"3.215","7":"19.44","8":"1","9":"0","10":"3","11":"1","_rn_":"Hornet 4 Drive"},{"1":"18.7","2":"8","3":"360.0","4":"175","5":"3.15","6":"3.440","7":"17.02","8":"0","9":"0","10":"3","11":"2","_rn_":"Hornet Sportabout"},{"1":"18.1","2":"6","3":"225.0","4":"105","5":"2.76","6":"3.460","7":"20.22","8":"1","9":"0","10":"3","11":"1","_rn_":"Valiant"},{"1":"14.3","2":"8","3":"360.0","4":"245","5":"3.21","6":"3.570","7":"15.84","8":"0","9":"0","10":"3","11":"4","_rn_":"Duster 360"},{"1":"24.4","2":"4","3":"146.7","4":"62","5":"3.69","6":"3.190","7":"20.00","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 240D"},{"1":"22.8","2":"4","3":"140.8","4":"95","5":"3.92","6":"3.150","7":"22.90","8":"1","9":"0","10":"4","11":"2","_rn_":"Merc 230"},{"1":"19.2","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.30","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280"},{"1":"17.8","2":"6","3":"167.6","4":"123","5":"3.92","6":"3.440","7":"18.90","8":"1","9":"0","10":"4","11":"4","_rn_":"Merc 280C"},{"1":"16.4","2":"8","3":"275.8","4":"180","5":"3.07","6":"4.070","7":"17.40","8":"0","9":"0","10":"3","11":"3","_rn_":"Merc 450SE"},{"1":"17.3","2":"8","3":"275.8","4":"180","5":"3.07","6":"3.730","7":"17.60","8":"0","9":"0","10":"3","11":"3","_rn_":"Merc 450SL"},{"1":"15.2","2":"8","3":"275.8","4":"180","5":"3.07","6":"3.780","7":"18.00","8":"0","9":"0","10":"3","11":"3","_rn_":"Merc 450SLC"},{"1":"10.4","2":"8","3":"472.0","4":"205","5":"2.93","6":"5.250","7":"17.98","8":"0","9":"0","10":"3","11":"4","_rn_":"Cadillac Fleetwood"},{"1":"10.4","2":"8","3":"460.0","4":"215","5":"3.00","6":"5.424","7":"17.82","8":"0","9":"0","10":"3","11":"4","_rn_":"Lincoln Continental"},{"1":"14.7","2":"8","3":"440.0","4":"230","5":"3.23","6":"5.345","7":"17.42","8":"0","9":"0","10":"3","11":"4","_rn_":"Chrysler Imperial"},{"1":"32.4","2":"4","3":"78.7","4":"66","5":"4.08","6":"2.200","7":"19.47","8":"1","9":"1","10":"4","11":"1","_rn_":"Fiat 128"},{"1":"30.4","2":"4","3":"75.7","4":"52","5":"4.93","6":"1.615","7":"18.52","8":"1","9":"1","10":"4","11":"2","_rn_":"Honda Civic"},{"1":"33.9","2":"4","3":"71.1","4":"65","5":"4.22","6":"1.835","7":"19.90","8":"1","9":"1","10":"4","11":"1","_rn_":"Toyota Corolla"},{"1":"21.5","2":"4","3":"120.1","4":"97","5":"3.70","6":"2.465","7":"20.01","8":"1","9":"0","10":"3","11":"1","_rn_":"Toyota Corona"},{"1":"15.5","2":"8","3":"318.0","4":"150","5":"2.76","6":"3.520","7":"16.87","8":"0","9":"0","10":"3","11":"2","_rn_":"Dodge Challenger"},{"1":"15.2","2":"8","3":"304.0","4":"150","5":"3.15","6":"3.435","7":"17.30","8":"0","9":"0","10":"3","11":"2","_rn_":"AMC Javelin"},{"1":"13.3","2":"8","3":"350.0","4":"245","5":"3.73","6":"3.840","7":"15.41","8":"0","9":"0","10":"3","11":"4","_rn_":"Camaro Z28"},{"1":"19.2","2":"8","3":"400.0","4":"175","5":"3.08","6":"3.845","7":"17.05","8":"0","9":"0","10":"3","11":"2","_rn_":"Pontiac Firebird"},{"1":"27.3","2":"4","3":"79.0","4":"66","5":"4.08","6":"1.935","7":"18.90","8":"1","9":"1","10":"4","11":"1","_rn_":"Fiat X1-9"},{"1":"26.0","2":"4","3":"120.3","4":"91","5":"4.43","6":"2.140","7":"16.70","8":"0","9":"1","10":"5","11":"2","_rn_":"Porsche 914-2"},{"1":"30.4","2":"4","3":"95.1","4":"113","5":"3.77","6":"1.513","7":"16.90","8":"1","9":"1","10":"5","11":"2","_rn_":"Lotus Europa"},{"1":"15.8","2":"8","3":"351.0","4":"264","5":"4.22","6":"3.170","7":"14.50","8":"0","9":"1","10":"5","11":"4","_rn_":"Ford Pantera L"},{"1":"19.7","2":"6","3":"145.0","4":"175","5":"3.62","6":"2.770","7":"15.50","8":"0","9":"1","10":"5","11":"6","_rn_":"Ferrari Dino"},{"1":"15.0","2":"8","3":"301.0","4":"335","5":"3.54","6":"3.570","7":"14.60","8":"0","9":"1","10":"5","11":"8","_rn_":"Maserati Bora"},{"1":"21.4","2":"4","3":"121.0","4":"109","5":"4.11","6":"2.780","7":"18.60","8":"1","9":"1","10":"4","11":"2","_rn_":"Volvo 142E"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    list(message = check_code, correct = TRUE, location = \"append\")","}"]}</script>
-</div>
-<div class="tutorial-exercise-support" data-label="print-limit-hint" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>head(mtcars)</code></pre>
-</div>
-</div>
-<div id="section-quiz" class="section level3">
-<h3>Quiz</h3>
-<p><em>You can include any number of single or multiple choice questions as a quiz. Use the <code>question</code> function to define a question and the <code>quiz</code> function for grouping multiple questions together.</em></p>
-<p>Some questions to verify that you understand the purposes of various base and recommended R packages:</p>
+<div id="section-quiz" class="section level2">
+<h2>Quiz</h2>
 <p><div class="panel-heading tutorial-panel-heading">Quiz</div><div data-label="quiz-1" class="tutorial-question">
 <div id="quiz-1-answer_container" class="shiny-html-output"></div>
 <div id="quiz-1-message_container" class="shiny-html-output"></div>
@@ -186,26 +147,105 @@ $(document).ready(function () {
 <div id="quiz-2-message_container" class="shiny-html-output"></div>
 <div id="quiz-2-action_button_container" class="shiny-html-output"></div>
 </div></p>
+</div>
+<div id="section-premiers-pas-dans-la-console" class="section level2">
+<h2>Premiers pas dans la console</h2>
+<p>Sous ces lignes se trouve une <strong>console</strong> R et, à la manière d’une calculatrice, il est possible de lui demander de réaliser des calculs pour nous : tapez ci-dessous, dans la console, un calcul tel que <code>2 + 2</code> et appuyez sur le bouton “Run Code” <img src="www/bouton_run_code.png" /> en haut à droite de la console pour faire executer le code et trouver la réponse en dessous :</p>
+<div class="tutorial-exercise" data-label="two-plus-two" data-caption="Code" data-completion="0" data-diagnostics="1" data-startover="1" data-lines="0">
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
+</div>
+<p>R répond <code>4</code> et heureusement ! A l’avenir nous allons lui faire faire des choses beaucoup plus compliquées…</p>
+<blockquote>
+<p>Notez que quand R répond à vos demandes, il commence toutes ses “phrases” par un numero de ligne, ici <code>[1]</code></p>
+</blockquote>
+<p>Voici une console un peu plus grande qui contient des instructions pré-remplies, exécutez-les toujours avec le bouton <img src="www/bouton_run_code.png" /> pour voir comment R structure sa réponse à votre sollicitation :</p>
+<div class="tutorial-exercise" data-label="several_instructions" data-caption="Code" data-completion="0" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>2 + 2
+2+2
+   2    +   2
+   2    -   2
+12345678 * 4</code></pre>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
+</div>
+<p>La console est un lieu de dialogue, vous commandez et R s’exécute ! Remarquons qu’il y a une réponse par instruction passée et que le nombre d’espaces est sans importance.<br />
+<code>*</code> est l’opérateur de multiplication. Les autres opérateurs utiles sont <code>-</code> pour la soustraction et <code>/</code> pour la division.</p>
+<p>Essayez quelques calculs par vous-même :</p>
+<div class="tutorial-exercise" data-label="error_is_ok" data-caption="Code" data-completion="0" data-diagnostics="1" data-startover="1" data-lines="0">
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
+</div>
+</div>
+<div id="section-afficher-un-tableau" class="section level2">
+<h2>Afficher un tableau</h2>
+<p>Vos conversations dans le langage runique sont pour l’instant très limitées. Ce n’est pas ainsi que nous allons trouver le nombre d’enfants prénommés “Zelda” au royaume de Statis en 1985 !</p>
+<p>Poursuivons notre dialogue avec R : nous allons lui demander d’afficher notre premier <strong>tableau de données</strong>. Après tout, c’est avec cette matière que nous allons avancer dans notre quête au royaume de Statis.</p>
+<p>Le jeu de données des prénoms donnés aux statisiens depuis 1900 a été importé dans R, pour le faire apparaître, il suffit de taper <code>prenoms</code> dans la console :</p>
+<div class="tutorial-exercise" data-label="prenoms" data-caption="Code" data-completion="0" data-diagnostics="1" data-startover="1" data-lines="0">
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
+</div>
+<p>Nous avons sous les yeux un jeu de données qui comporte 3763984 lignes et 6 colonnes. Nous l’avons fait apparaître en tapant son nom (<code>prenoms</code>) dans la console.</p>
+<blockquote>
+<p>R n’en affiche que les 10 premières lignes et nous informe de sa taille d’emblée au moyen de ce descriptif : <code># A tibble: 3,712,763 x 6</code></p>
+</blockquote>
+<p>Nous appellerons les colonnes 6 des <strong>variables</strong> et les 3763984 lignes des <strong>observations</strong>.</p>
+<p>Examinons les variables en présence :</p>
+<ul>
+<li><p><code>year</code> est l’année où le prénom a été recensé</p></li>
+<li><p><code>sex</code> est le sexe de l’enfant à la naissance</p></li>
+<li><p><code>name</code> est le prénom donné à l’enfant</p></li>
+<li><p><code>n</code> correspond au nombre d’enfants nés une année donnée pour un prénom donné, c’est l’effectif</p></li>
+<li><p><code>dpt</code> est le département de naissance de l’enfant</p></li>
+<li><p><code>prop</code> est la proportion d’enfants portant ce prénom pour une année et un département donné (il s’agit de l’effectif divisé par la somme des naissances dans le département)</p></li>
+</ul>
+<blockquote>
+<p>(à voir ici si on conserve la colonne département et proportion)</p>
+</blockquote>
+<!-- R, comme beaucoup de langage de programmation, est intransigeant et intolérant à l'erreur. Remarquez que si vous tapez `PRENOMS` ou même `Prenoms` au lieu de `prenoms`, R retourne un message d'erreur -->
+<!-- ```{r give_it_a_try, exercise=TRUE} -->
+<!-- ``` -->
+<!-- Pas de panique toutefois, tous les apprenants peuvent se tromper ! Même les grands mages de niveau 60 écopent de fin de non recevoir de la part de R. Heureusement, s'il est inflexible, il n'est pas rancunier et mages comme apprentis peuvent solliciter R à l'envi sans risque -->
+</div>
+<div id="section-les-zelda-de-1985" class="section level2">
+<h2>Les Zelda de 1985</h2>
+<p>Si nous disposons du jeu de données <code>prenoms</code>, il est difficile pour l’instant de répondre à la question qui nous intéresse ici : combien d’enfants ont été prénommés “Zelda” au royaume de Statis en 1985 ?</p>
+<p>Nous apprendrons plus tard dans notre périple au royaume de Statis à filtrer des tableaux selon les critères qui nous intéressent. En attendant, le jeu de données <code>zelda</code> est mis à notre disposition pour répondre à la question qui nous brûle les lèvres.</p>
+<p>Saurez-vous afficher le jeu de données <code>zelda</code> dans la console ?</p>
+<div class="tutorial-exercise" data-label="zelda" data-caption="Code" data-completion="0" data-diagnostics="1" data-startover="1" data-lines="0">
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL"}</script>
+</div>
+<p><div class="panel-heading tutorial-panel-heading">Quiz</div><div data-label="nombre_zelda-1" class="tutorial-question">
+<div id="nombre_zelda-1-answer_container" class="shiny-html-output"></div>
+<div id="nombre_zelda-1-message_container" class="shiny-html-output"></div>
+<div id="nombre_zelda-1-action_button_container" class="shiny-html-output"></div>
+</div></p>
+</div>
+<div id="section-puzzle" class="section level2">
+<h2>Puzzle</h2>
+<p>Ceci est un test pour l’utilisation des puzzles de parsons :</p>
 <p>Mettre les blocs dans le bon ordre :</p>
-<div data-label="banana3" class="tutorial-question">
-<div id="banana3-answer_container" class="shiny-html-output"></div>
-<div id="banana3-message_container" class="shiny-html-output"></div>
-<div id="banana3-action_button_container" class="shiny-html-output"></div>
+<div data-label="puzzle1" class="tutorial-question">
+<div id="puzzle1-answer_container" class="shiny-html-output"></div>
+<div id="puzzle1-message_container" class="shiny-html-output"></div>
+<div id="puzzle1-action_button_container" class="shiny-html-output"></div>
 </div>
 
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 library(parsons)
-checker <- function(label, user_code, check_code, envir_result, evaluate_result, ...) {
-  list(message = check_code, correct = TRUE, location = "append")
-}
-tutorial_options(exercise.timelimit = 60, exercise.checker = checker)
-
-
 knitr::opts_chunk$set(echo = FALSE)
-system.file("data","zelda.rds",package = "docklearn")
 # zelda <- readr::read_rds(path = "www/zelda.rds")
+# prenoms <- readr::read_rds(path = "www/prenoms.rds")
+tutorial_options(exercise.completion = FALSE)
+
+
+
+# zelda <- readr::read_rds(path = "www/zelda.rds")
+# prenoms <- readr::read_rds(path = "www/prenoms.rds")
 zelda <- readr::read_rds(path = system.file("data","zelda.rds",package = "docklearn"))
+# prenoms <- readr::read_rds(path = system.file("data","prenom.rds",package = "docklearn"))
+
+library(prenoms)
+data("prenoms")
+
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -213,9 +253,17 @@ learnr:::register_http_handlers(session, metadata = NULL)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-two-plus-two2-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-two-plus-two2-code-editor`)), session)
-output$`tutorial-exercise-two-plus-two2-output` <- renderUI({
-  `tutorial-exercise-two-plus-two2-result`()
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("Qu&#39;est-ce que R ne fait PAS ?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_dd24814",     option = "de très beaux graphiques", value = "de très beaux graphiques",     label = structure("de très beaux graphiques", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_95e2e04",     option = "des calculs statistiques", value = "des calculs statistiques",     label = structure("des calculs statistiques", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_355d5f2",     option = "de très belles cartes géographiques", value = "de très belles cartes géographiques",     label = structure("de très belles cartes géographiques", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3fabdee",     option = "le café", value = "le café", label = structure("le café", html = TRUE, class = c("html",     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c747aed",     option = "des applications web", value = "des applications web",     label = structure("des applications web", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "quiz-1-answer", question = "quiz-1"), loading = structure("<strong>Loading:<\u002fstrong> \nQu&#39;est-ce que R ne fait PAS ?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = FALSE,     seed = 39321083.9816897, options = list()), class = c("learnr_radio", "tutorial_question")))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-2", question = structure("Que signifie &quot;logiciel libre&quot; ?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_cd63f4d",     option = "un logiciel libre est un logiciel sauvage, on ne le trouve pas à l'état domestique",     value = "un logiciel libre est un logiciel sauvage, on ne le trouve pas à l'état domestique",     label = structure("un logiciel libre est un logiciel sauvage, on ne le trouve pas à l&#39;état domestique", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_669ae3d",     option = "un logiciel libre est un logiciel qui autorise librement l'utilisation, l'étude, la modification et la redistribution",     value = "un logiciel libre est un logiciel qui autorise librement l'utilisation, l'étude, la modification et la redistribution",     label = structure("un logiciel libre est un logiciel qui autorise librement l&#39;utilisation, l&#39;étude, la modification et la redistribution", html = TRUE, class = c("html",     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_86aee66",     option = "un logiciel libre est un logiciel qu'on a vu voler",     value = "un logiciel libre est un logiciel qu'on a vu voler",     label = structure("un logiciel libre est un logiciel qu&#39;on a vu voler", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "quiz-2-answer", question = "quiz-2"), loading = structure("<strong>Loading:<\u002fstrong> \nQue signifie &quot;logiciel libre&quot; ?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = FALSE,     seed = 879395000.5905, options = list()), class = c("learnr_radio", "tutorial_question")))
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+`tutorial-exercise-two-plus-two-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-two-plus-two-code-editor`)), session)
+output$`tutorial-exercise-two-plus-two-output` <- renderUI({
+  `tutorial-exercise-two-plus-two-result`()
 })
 </script>
  
@@ -234,29 +282,25 @@ output$`tutorial-exercise-error_is_ok-output` <- renderUI({
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-add-function-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-add-function-code-editor`)), session)
-output$`tutorial-exercise-add-function-output` <- renderUI({
-  `tutorial-exercise-add-function-result`()
+`tutorial-exercise-prenoms-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-prenoms-code-editor`)), session)
+output$`tutorial-exercise-prenoms-output` <- renderUI({
+  `tutorial-exercise-prenoms-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-print-limit-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-print-limit-code-editor`)), session)
-output$`tutorial-exercise-print-limit-output` <- renderUI({
-  `tutorial-exercise-print-limit-result`()
+`tutorial-exercise-zelda-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-zelda-code-editor`)), session)
+output$`tutorial-exercise-zelda-output` <- renderUI({
+  `tutorial-exercise-zelda-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "quiz-1", question = structure("Which package contains functions for installing other R packages?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_d6157bd",     option = "base", value = "base", label = structure("base", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_c5f8cd2",     option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_af09b46",     option = "utils", value = "utils", label = structure("utils", html = TRUE, class = c("html",     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_25af7ed",     option = "codetools", value = "codetools", label = structure("codetools", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "quiz-1-answer", question = "quiz-1"), loading = structure("<strong>Loading:<\u002fstrong> \nWhich package contains functions for installing other R packages?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = FALSE,     seed = 788520652.632816, options = list()), class = c("learnr_radio", "tutorial_question")))
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "nombre_zelda-1",     question = structure("Combien d&#39;enfants nés en 1985 sont prénommés Zelda ?", html = TRUE, class = c("html",     "character")), answers = list(structure(list(id = "lnr_ans_f5d227e",         option = "3", value = "3", label = structure("3", html = TRUE, class = c("html",         "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3d55fe0",         option = "0", value = "0", label = structure("0", html = TRUE, class = c("html",         "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer")), structure(list(id = "lnr_ans_10d39be",         option = "12", value = "12", label = structure("12", html = TRUE, class = c("html",         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html",     "character")), try_again = structure("Try Again", html = TRUE, class = c("html",     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html",     "character")), try_again = structure("Incorrect", html = TRUE, class = c("html",     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html",     "character")), message = NULL, post_message = NULL), ids = list(        answer = "nombre_zelda-1-answer", question = "nombre_zelda-1"),     loading = structure("<strong>Loading:<\u002fstrong> \nCombien d&#39;enfants nés en 1985 sont prénommés Zelda ?\n<br/><br/><br/>", html = TRUE, class = c("html",     "character")), random_answer_order = FALSE, allow_retry = FALSE,     seed = 1112582090.98191, options = list()), class = c("learnr_radio", "tutorial_question")))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_checkbox", label = "quiz-2", question = structure("Which of the R packages listed below are used to create plots?", html = TRUE, class = c("html", "character")), answers = list(structure(list(id = "lnr_ans_5ccc3f7",     option = "lattice", value = "lattice", label = structure("lattice", html = TRUE, class = c("html",     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_21edc31",     option = "tools", value = "tools", label = structure("tools", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_9c380da",     option = "stats", value = "stats", label = structure("stats", html = TRUE, class = c("html",     "character")), correct = FALSE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer")), structure(list(id = "lnr_ans_208f8a1",     option = "grid", value = "grid", label = structure("grid", html = TRUE, class = c("html",     "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer", "tutorial_quiz_answer"))), button_labels = list(submit = structure("Submit Answer", html = TRUE, class = c("html", "character")), try_again = structure("Try Again", html = TRUE, class = c("html", "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", "character")), message = NULL, post_message = NULL), ids = list(    answer = "quiz-2-answer", question = "quiz-2"), loading = structure("<strong>Loading:<\u002fstrong> \nWhich of the R packages listed below are used to create plots?\n<br/><br/><br/>", html = TRUE, class = c("html", "character")), random_answer_order = FALSE, allow_retry = FALSE,     seed = 993684273.53728, options = list()), class = c("learnr_checkbox", "tutorial_question")))
-</script>
- 
-<script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "parsons_question", label = "banana3",     question = NULL, answers = list(structure(list(id = "lnr_ans_20204e2",         option = c("iris", "mutate(...)", "summarize(...)"),         value = c("iris", "mutate(...)", "summarize(...)"), label = structure("iris\nmutate(...)\nsummarize(...)", html = TRUE, class = c("html",         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Give feedback", html = TRUE, class = c("html",     "character")), try_again = structure("Try Again", html = TRUE, class = c("html",     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html",     "character")), try_again = structure("Incorrect", html = TRUE, class = c("html",     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html",     "character")), message = NULL, post_message = NULL), ids = list(        answer = "banana3-answer", question = "banana3"), loading = structure("Loading: ", html = TRUE, class = c("html",     "character")), random_answer_order = TRUE, allow_retry = TRUE,     seed = 34231813.4840596, options = list(initial = c("iris",     "mutate(...)", "summarize(...)", "print()"), pass = list(),         fail = list(structure(list(fun = structure(function (...,             .x = ..1, .y = ..2, . = ..1)         length(.) < 2, class = c("rlang_lambda_function", "function"        )), message = "Include at least two answers"), class = c("parsons_expectation_fail",         "list")), structure(list(fun = function (x)         {            "print()" %in% x        }, message = "You should not include print() in your answer"), class = c("parsons_expectation_fail",         "list")), structure(list(fun = structure(function (...,             .x = ..1, .y = ..2, . = ..1)         {            .[1] != "iris"        }, class = c("rlang_lambda_function", "function")), message = "Your solution should start with 'iris'"), class = c("parsons_expectation_fail",         "list"))), problem_type = "base", sortable_options = structure(list(), class = "sortable_options"))), class = c("parsons_question", "tutorial_question")))
+learnr:::question_prerendered_chunk(structure(list(type = "parsons_question", label = "puzzle1",     question = NULL, answers = list(structure(list(id = "lnr_ans_bd56fb9",         option = c("iris", "mutate(...)", "summarize(...)"),         value = c("iris", "mutate(...)", "summarize(...)"), label = structure("iris\nmutate(...)\nsummarize(...)", html = TRUE, class = c("html",         "character")), correct = TRUE, message = NULL), class = c("tutorial_question_answer",     "tutorial_quiz_answer"))), button_labels = list(submit = structure("Give feedback", html = TRUE, class = c("html",     "character")), try_again = structure("Try Again", html = TRUE, class = c("html",     "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html",     "character")), try_again = structure("Incorrect", html = TRUE, class = c("html",     "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html",     "character")), message = NULL, post_message = NULL), ids = list(        answer = "puzzle1-answer", question = "puzzle1"), loading = structure("Loading: ", html = TRUE, class = c("html",     "character")), random_answer_order = TRUE, allow_retry = TRUE,     seed = 251013697.383113, options = list(initial = c("iris",     "mutate(...)", "summarize(...)", "print()"), pass = list(),         fail = list(structure(list(fun = structure(function (...,             .x = ..1, .y = ..2, . = ..1)         length(.) < 2, class = c("rlang_lambda_function", "function"        )), message = "Include at least two answers"), class = c("parsons_expectation_fail",         "list")), structure(list(fun = function (x)         {            "print()" %in% x        }, message = "You should not include print() in your answer"), class = c("parsons_expectation_fail",         "list")), structure(list(fun = structure(function (...,             .x = ..1, .y = ..2, . = ..1)         {            .[1] != "iris"        }, class = c("rlang_lambda_function", "function")), message = "Your solution should start with 'iris'"), class = c("parsons_expectation_fail",         "list"))), problem_type = "base", sortable_options = structure(list(), class = "sortable_options"))), class = c("parsons_question", "tutorial_question")))
 </script>
  <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="dependencies">
@@ -265,10 +309,9 @@ learnr:::question_prerendered_chunk(structure(list(type = "parsons_question", la
 <!--/html_preserve-->
 <!--html_preserve-->
 <script type="application/shiny-prerendered" data-context="execution_dependencies">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","checkmate","compiler","crayon","datasets","digest","ellipsis","evaluate","fastmap","graphics","grDevices","hms","htmltools","htmlwidgets","httpuv","jsonlite","knitr","later","learnr","magrittr","markdown","methods","mime","parsons","pillar","pkgconfig","promises","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","shiny","sortable","stats","stringi","stringr","tibble","tools","utils","vctrs","withr","xfun","xtable","yaml","zeallot"]},{"type":"character","attributes":{},"value":["0.2.1","1.1.5","3.5.1","1.9.4","3.5.1","1.3.4","3.5.1","0.6.21","0.3.0","0.14","1.0.1","3.5.1","3.5.1","0.5.1","0.4.0","1.5.1","1.5.2","1.6","1.25","1.0.0","0.9.2.9006","1.5","1.1","3.5.1","0.7","0.0.2.9000","1.4.2","2.0.3","1.1.0","2.4.0","1.0.2","1.3.1","0.4.0","1.16","1.3-2","1.4.0","0.3.1","3.5.1","1.4.3","1.4.0","2.1.3","3.5.1","3.5.1","0.2.0","2.1.2","0.10","1.8-4","2.2.0","0.1.0"]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["packages","version"]},"class":{"type":"character","attributes":{},"value":["data.frame"]},"row.names":{"type":"integer","attributes":{},"value":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]}},"value":[{"type":"character","attributes":{},"value":["assertthat","backports","base","checkmate","compiler","crayon","datasets","digest","ellipsis","evaluate","fastmap","graphics","grDevices","hms","htmltools","htmlwidgets","httpuv","jsonlite","knitr","later","learnr","magrittr","markdown","methods","mime","parsons","pillar","pkgconfig","prenoms","promises","R6","Rcpp","readr","rlang","rmarkdown","rprojroot","shiny","sortable","stats","stringi","stringr","tibble","tools","utils","vctrs","withr","xfun","xtable","yaml","zeallot"]},{"type":"character","attributes":{},"value":["0.2.1","1.1.5","3.5.1","1.9.4","3.5.1","1.3.4","3.5.1","0.6.21","0.3.0","0.14","1.0.1","3.5.1","3.5.1","0.5.1","0.4.0","1.5.1","1.5.2","1.6","1.25","1.0.0","0.9.2.9006","1.5","1.1","3.5.1","0.7","0.0.2.9000","1.4.2","2.0.3","0.2.0","1.1.0","2.4.0","1.0.2","1.3.1","0.4.0","1.16","1.3-2","1.4.0","0.3.1","3.5.1","1.4.3","1.4.0","2.1.3","3.5.1","3.5.1","0.2.0","2.1.2","0.10","1.8-4","2.2.0","0.1.0"]}]}]}
 </script>
 <!--/html_preserve-->
-</div>
 </div>
 </div>
 

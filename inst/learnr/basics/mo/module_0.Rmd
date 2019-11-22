@@ -3,121 +3,194 @@ title: "Module 0"
 output: 
   learnr::tutorial:
      css: www/my_css.css
+     progressive: true
 runtime: shiny_prerendered
 ---
 
 ```{r setup, include=FALSE}
 library(learnr)
 library(parsons)
-checker <- function(label, user_code, check_code, envir_result, evaluate_result, ...) {
-  list(message = check_code, correct = TRUE, location = "append")
-}
-tutorial_options(exercise.timelimit = 60, exercise.checker = checker)
-
-
 knitr::opts_chunk$set(echo = FALSE)
-system.file("data","zelda.rds",package = "docklearn")
 # zelda <- readr::read_rds(path = "www/zelda.rds")
+# prenoms <- readr::read_rds(path = "www/prenoms.rds")
+tutorial_options(exercise.completion = FALSE)
+
+
+
+# zelda <- readr::read_rds(path = "www/zelda.rds")
+# prenoms <- readr::read_rds(path = "www/prenoms.rds")
 zelda <- readr::read_rds(path = system.file("data","zelda.rds",package = "docklearn"))
+# prenoms <- readr::read_rds(path = system.file("data","prenom.rds",package = "docklearn"))
+
+library(prenoms)
+data("prenoms")
+
 ```
 
 
-```{r eval=FALSE,echo=FALSE}
-DT::datatable(zelda)
-```
+# Premières conversations runiques
 
+## Objectifs
 
+Dans ce premier module, nous allons progressivement : 
 
-# truc 1 
+- comprendre ce qu'est-ce le fameux langage runique R
+
+- entamer les premiers dialogues avec R via une fenêtre de saisie : la console
+
+- et nous familiariser avec quelques uns des tics de langages de R
+
+En cas de besoin, n'hésitez pas à solliciter un animateur circulant dans la salle.
+
 
 ## Qu'est-ce que R ?
 
-R est un langage utilisé pour le traitement de données statistiques, dont la première version a été publiée en février 2000. D'abord principalement diffusé parmi les chercheurs, R est aujourd'hui de plus en plus utilisé au sein des Instituts nationaux de statistiques.
+R est un langage utilisé pour le traitement de données statistiques, dont la première version a été publiée en février 2000 par Robert Gentleman et Ross Ihaka. D'abord principalement diffusé parmi les chercheurs, R est aujourd'hui de plus en plus utilisé au sein des Instituts nationaux de statistiques.
 
-À la différence d'autres logiciels comme SAS, R est un **logiciel libre** : sa licence d'utilisation est gratuite et autorise chaque utilisateur à **accéder, modifier ou redistribuer son code source**. 
+R permet de faire des **calculs statistiques**, de les restituer sous forme de **tableaux** et également de tracer des **graphiques** et des cartes géographiques. Les résultats produits dans R peuvent être exportés dans des **rapports** et même être intégrés dans des **applications web** en ligne.
+
+
+À la différence d'autres logiciels comme SAS, R est un **logiciel libre** : sa licence d'utilisation est gratuite et autorise chaque utilisateur à **accéder, modifier ou redistribuer son code source**.
+Le code source est l'équivalent du mode d'emploi pour la fabrication du logiciel. 
+Il est aussi **multi-plateforme**. Cela signifie qu'il peut être executé sur plusieurs systèmes d'exploitation (Windows, MacOS, Linux...)
+
 
 <!-- Une des conséquences de cette philosophie "libre" est le rôle qu'y jouent les modules complémentaires, ou **packages**. Ces packages enrichissent considérablement les fonctionnalités du logiciel : comme d'avoir une calculatrice à laquelle on peut ajouter de nouveaux boutons pour la personnaliser pour ses besoins... -->
 
-Sous ces lignes se trouve une **console** R et, à la manière d'une calculatrice, il est possible de lui demander de réaliser des calculs pour nous : tapez ci-dessous, dans la console, un calcul tel que `2 + 2` et appuyez sur le bouton bleu ![](www/bouton_run_code.png)
+## Quiz
 
-```{r two-plus-two2, exercise=TRUE}
-zelda
-```
-
-R vous répond `4` et heureusement ! A l'avenir nous allons lui faire faire des choses beaucoup plus compliquées...
-
-Notez que quand R répond à vos demandes, il commence toutes ses "phrases" par un numero de ligne, ici `[1]`
-
-Voici une console un peu plus grande qui contient des instructions pré-remplies, exécutez-les pour voir comment R structure sa réponse à votre sollicitation :
-
-```{r several_instructions, exercise=TRUE, exercices.lines = 10}
-2 + 2
-12345678 * 4
-"du texte entre guillemets"
-```
-
-
-La console est un lieu de dialogue, vous commandez et R s'exécute. Parfois, la communication passe mal, R ne vous comprend pas
-
-```{r error_is_ok, exercise=TRUE}
-
-```
-
-### Exercise with Code
-
-*Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
-
-Now write a function that adds any two numbers and then call it:
-
-```{r add-function, exercise=TRUE, exercise.lines = 5}
-add <- function() {
-  
-}
-```
-
-## Topic 2
-
-### Exercise with Hint
-
-*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
-
-Modify the following code to limit the number of rows printed to 5:
-
-```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
-mtcars
-```
-
-```{r print-limit-hint}
-head(mtcars)
-```
-
-### Quiz
-
-*You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
-
-Some questions to verify that you understand the purposes of various base and recommended R packages:
 
 ```{r quiz}
 quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
+  question("Qu'est-ce que R ne fait PAS ?",
+    answer("de très beaux graphiques"),
+    answer("des calculs statistiques"),
+    answer("de très belles cartes géographiques"),
+    answer("le café", correct = TRUE),
+    answer("des applications web")
   ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
+  question('Que signifie "logiciel libre" ?',
+    answer("un logiciel libre est un logiciel sauvage, on ne le trouve pas à l'état domestique"),
+    answer("un logiciel libre est un logiciel qui autorise librement l'utilisation, l'étude, la modification et la redistribution", correct = TRUE),
+    answer("un logiciel libre est un logiciel qu'on a vu voler")
   )
 )
 ```
 
 
+## Premiers pas dans la console
+
+Sous ces lignes se trouve une **console** R et, à la manière d'une calculatrice, il est possible de lui demander de réaliser des calculs pour nous : tapez ci-dessous, dans la console, un calcul tel que `2 + 2` et appuyez sur le bouton "Run Code" ![](www/bouton_run_code.png) en haut à droite de la console pour faire executer le code  et trouver la réponse en dessous : 
+
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+R  répond `4` et heureusement ! A l'avenir nous allons lui faire faire des choses beaucoup plus compliquées...
+
+
+> Notez que quand R répond à vos demandes, il commence toutes ses "phrases" par un numero de ligne, ici `[1]`
+
+Voici une console un peu plus grande qui contient des instructions pré-remplies, exécutez-les toujours avec le bouton ![](www/bouton_run_code.png) pour voir comment R structure sa réponse à votre sollicitation :
+
+```{r several_instructions, exercise=TRUE, exercices.lines = 10}
+2 + 2
+2+2
+   2    +   2
+   2    -   2
+12345678 * 4
+
+```
+
+
+La console est un lieu de dialogue, vous commandez et R s'exécute !
+Remarquons qu'il y a une réponse par instruction passée et que le nombre d'espaces est sans importance.   
+`*` est l'opérateur de multiplication. Les autres opérateurs utiles sont `-` pour la soustraction et  `/` pour la division.
+
+Essayez quelques calculs par vous-même : 
+
+```{r error_is_ok, exercise=TRUE}
+
+```
+
+## Afficher un tableau 
+
+Vos conversations dans le langage runique sont pour l'instant très limitées. 
+Ce n'est pas ainsi que nous allons trouver le nombre d'enfants prénommés "Zelda" au royaume de Statis en 1985 ! 
+
+
+Poursuivons notre dialogue avec R : nous allons lui demander d'afficher notre premier **tableau de données**. Après tout, c'est avec cette matière que nous allons avancer dans notre quête au royaume de Statis.  
+
+Le jeu de données des prénoms donnés aux statisiens depuis 1900 a été importé dans R, pour le faire apparaître, il suffit de taper `prenoms` dans la console : 
+
+```{r prenoms, exercise=TRUE}
+
+```
+
+Nous avons sous les yeux un jeu de données qui comporte `r nrow(prenoms)` lignes et `r ncol(prenoms)` colonnes. Nous l'avons fait apparaître en tapant son nom (`prenoms`) dans la console.
+
+> R n'en affiche que les 10 premières lignes et nous informe de sa taille d'emblée au moyen de ce descriptif : `# A tibble: 3,712,763 x 6` 
+
+Nous appellerons les colonnes `r ncol(prenoms)` des **variables** et les `r nrow(prenoms)` lignes des **observations**. 
+
+Examinons les variables en présence : 
+
+- ``r names(prenoms)[1]`` est l'année où le prénom a été recensé
+
+- ``r names(prenoms)[2]`` est le sexe de l'enfant à la naissance
+
+- ``r names(prenoms)[3]`` est le prénom donné à l'enfant
+
+- ``r names(prenoms)[4]`` correspond au nombre d'enfants nés une année donnée pour un prénom donné, c'est l'effectif
+
+- ``r names(prenoms)[5]`` est le département de naissance de l'enfant
+
+- ``r names(prenoms)[6]`` est la proportion d'enfants portant ce prénom pour une année et un département donné (il s'agit de l'effectif divisé par la somme des naissances dans le département)
+
+
+> (à voir ici si on conserve la colonne département et proportion) 
+
+<!-- R, comme beaucoup de langage de programmation, est intransigeant et intolérant à l'erreur. Remarquez que si vous tapez `PRENOMS` ou même `Prenoms` au lieu de `prenoms`, R retourne un message d'erreur -->
+
+<!-- ```{r give_it_a_try, exercise=TRUE} -->
+
+<!-- ``` -->
+
+<!-- Pas de panique toutefois, tous les apprenants peuvent se tromper ! Même les grands mages de niveau 60 écopent de fin de non recevoir de la part de R. Heureusement, s'il est inflexible, il n'est pas rancunier et mages comme apprentis peuvent solliciter R à l'envi sans risque -->
+
+
+## Les Zelda de 1985
+
+Si nous disposons du jeu de données `prenoms`, il est difficile pour l'instant de répondre à la question qui nous intéresse ici : combien d'enfants ont été prénommés "Zelda" au royaume de Statis en 1985 ?
+
+Nous apprendrons plus tard dans notre périple au royaume de Statis à filtrer des tableaux selon les critères qui nous intéressent. En attendant, le jeu de données `zelda` est mis à notre disposition pour répondre à la question qui nous brûle les lèvres. 
+
+Saurez-vous afficher le jeu de données `zelda` dans la console ? 
+
+```{r zelda, exercise=TRUE}
+
+```
+ 
+
+```{r nombre_zelda}
+quiz(
+  question("Combien d'enfants nés en 1985 sont prénommés Zelda ?",
+    answer("3"),
+    answer("0"),
+    answer("12", correct = TRUE)
+  ))
+```
+
+
+## Puzzle
+
+Ceci est un test pour l'utilisation des puzzles de parsons : 
+
+
 Mettre les blocs dans le bon ordre  :
 
-```{r banana3} 
+```{r puzzle1} 
 question_parsons(
   initial = c(
     "iris",
